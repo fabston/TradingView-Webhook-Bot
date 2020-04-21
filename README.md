@@ -7,7 +7,7 @@ This bot listens to [TradingView](https://tradingview.com) alerts via webhooks a
 
 ## Usage
 1. Clone this repository `git clone https://github.com/fabcx/TradingView-Webhook-Bot.git`
-2. Create your virtual environment `python3 -m venv TradingView-Webhook-Bot
+2. Create your virtual environment `python3 -m venv TradingView-Webhook-Bot`
 3. Activate it `source TradingView-Webhook-Bot/bin/activate`
 4. Install all requirements `pip install -r requirements.txt`
 5. Edit and update the `config.py` file
