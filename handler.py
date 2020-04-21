@@ -9,12 +9,12 @@ discord  = config.send_discord_alerts
 
 def send_buy_order(data):
     if telegram:
-        tg_bot.sendMessage(config.channel, config.Buy_Alert)
+        tg_bot.sendMessage(config.channel, data)
         print('Alert has been sent to Telegram.')
     else:
         print('INFO: Telegram alerts are disabled.')
     if discord:
-        discord_alert = DiscordWebhook(url=config.discord_webhook, content=config.Buy_Alert)
+        discord_alert = DiscordWebhook(url=config.discord_webhook, content=data)
         response = discord_alert.execute()
         print('Alert has been sent to Discord.')
     else:
@@ -22,12 +22,12 @@ def send_buy_order(data):
   
 def send_sell_order(data): 
     if telegram:
-        tg_bot.sendMessage(config.channel, config.Sell_Alert)
+        tg_bot.sendMessage(config.channel, data)
         print('Alert has been sent to Telegram.')
     else:
         print('INFO: Telegram alerts are disabled.')
     if discord:
-        discord_alert = DiscordWebhook(url=config.discord_webhook, content=config.Sell_Alert)
+        discord_alert = DiscordWebhook(url=config.discord_webhook, content=data)
         response = discord_alert.execute()
         print('Alert has been sent to Discord.')
     else:
