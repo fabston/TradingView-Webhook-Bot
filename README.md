@@ -3,7 +3,7 @@
 ![Python3](https://img.shields.io/badge/python-3-blue.svg)
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-This bot listens to [TradingView](https://tradingview.com) alerts via webhooks and sends them instantly to Telegram and/or Discord. 
+This bot listens to [TradingView](https://tradingview.com) alerts via webhooks and sends them instantly to Telegram, Discord and/or Email. 
 
 ## Usage
 1. Clone this repository `git clone https://github.com/fabcx/TradingView-Webhook-Bot.git`
