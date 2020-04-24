@@ -2,5 +2,6 @@ flask
 waitress
 python-telegram-bot
 discord-webhook
+tweepy
 
 

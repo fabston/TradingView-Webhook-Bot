@@ -22,4 +22,9 @@ This bot listens to [TradingView](https://tradingview.com) alerts via webhooks a
 ![Webhook Bot](https://i.imgur.com/hA6yvtj.png)
 
 ## Donations
-BTC: `13VmcVh7U3y7UQiUGp1nnyn6Pz9TPR61a9`
+If you find the bot suitable for your needs, please consider donating whatever amount you like to:
+
+#### Bitcoin (BTC)
+```
+13VmcVh7U3y7UQiUGp1nnyn6Pz9TPR61a9
+```

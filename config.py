@@ -11,6 +11,13 @@ channel    =    # Channel ID (ex. -1001487568087)
 send_discord_alerts = True
 discord_webhook     = ''    # Discord Webhook URL (https://support.discordapp.com/hc/de/articles/228383668-Webhooks-verwenden)
 
+#Twitter Settings
+send_twitter_alerts = False
+tw_ckey    = ''
+tw_csecret = ''
+tw_atoken  = ''
+tw_asecret = ''
+
 # Email Settings
 send_email_alerts = False
 email_sender      = ''        # Your email address
