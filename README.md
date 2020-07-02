@@ -1,7 +1,6 @@
 # TradingView Webhook Bot
 
-![Python3](https://img.shields.io/badge/python-3-blue.svg)
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python3.8](https://img.shields.io/badge/python-3.8-blue.svg) ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 This bot listens to [TradingView](https://tradingview.com) alerts via webhooks and sends them instantly to Telegram, Discord and/or Email. 
 
@@ -19,12 +18,12 @@ This bot listens to [TradingView](https://tradingview.com) alerts via webhooks a
 *It is recommended to run flask on a different port like 8080. It is then necessary to forward port 80 to 8080.*
 
 ## Images
-![Webhook Bot](https://i.imgur.com/hA6yvtj.png)
+![Webhook Bot](https://i.imgur.com/aAMDmpA.png)
 
 ## Donations
 If you find the bot suitable for your needs, please consider donating whatever amount you like to:
 
 #### Bitcoin (BTC)
 ```
-13VmcVh7U3y7UQiUGp1nnyn6Pz9TPR61a9
+bc1q33xz5sdqqku3629mkeksdglvq3th4l59de8qpz
 ```
