@@ -1,3 +1,9 @@
+# ----------------------------------------------- #
+# Plugin Name           : TradingView-Webhook-Bot #
+# Author Name           : sixBit                  #
+# File Name             : config.py               #
+# ----------------------------------------------- #
+
 # Alert message in TradingView (ex. https://i.imgur.com/RFkuf1d.png)
 Buy_Alert  = 'Buy Alert!'
 Sell_Alert = 'Sell Alert!'

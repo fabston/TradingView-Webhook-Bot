@@ -1,3 +1,9 @@
+# ----------------------------------------------- #
+# Plugin Name           : TradingView-Webhook-Bot #
+# Author Name           : sixBit                  #
+# File Name             : main.py                 #
+# ----------------------------------------------- #
+
 import config as config
 from flask import Flask, request, abort
 from handler import send_buy_order, send_sell_order

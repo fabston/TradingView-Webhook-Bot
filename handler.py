@@ -1,3 +1,9 @@
+# ----------------------------------------------- #
+# Plugin Name           : TradingView-Webhook-Bot #
+# Author Name           : sixBit                  #
+# File Name             : handler.py              #
+# ----------------------------------------------- #
+
 import config as config
 from telegram import Bot
 from discord_webhook import DiscordWebhook
@@ -21,22 +27,19 @@ if twitter:
 def send_buy_order(data):
     if telegram:
         tg_bot.sendMessage(config.channel, data)
-        print('Alert has been sent to Telegram.')
     else:
-        print('INFO: Telegram alerts are disabled.')
+        pass
         
     if discord:
         discord_alert = DiscordWebhook(url=config.discord_webhook, content=data)
         response = discord_alert.execute()
-        print('Alert has been sent to Discord.')
     else:
-        print('INFO: Discord alerts are disabled.')
+        pass
         
     if twitter:
         tw_api.update_status(status=data)
-        print('Alert has been sent to Twitter.')
     else:
-        print('INFO: Twitter alerts are disabled.')
+        pass
         
     if email:
         email_msg = MIMEText(data)
@@ -48,29 +51,25 @@ def send_buy_order(data):
             server.login(config.email_user, config.email_password)
             server.sendmail(config.email_sender, config.email_receivers, email_msg.as_string())
             server.quit()
-            print('Alert has been sent by email.')
     else:
-        print('INFO: Email alerts are disabled.')
+        pass
   
 def send_sell_order(data): 
     if telegram:
         tg_bot.sendMessage(config.channel, data)
-        print('Alert has been sent to Telegram.')
     else:
-        print('INFO: Telegram alerts are disabled.')
+        pass
         
     if discord:
         discord_alert = DiscordWebhook(url=config.discord_webhook, content=data)
         response = discord_alert.execute()
-        print('Alert has been sent to Discord.')
     else:
-        print('INFO: Discord alerts are disabled.')
+        pass
         
     if twitter:
         tw_api.update_status(status=data)
-        print('Alert has been sent to Twitter.')
     else:
-        print('INFO: Twitter alerts are disabled.')
+        pass
         
     if email:
         email_msg = MIMEText(data)
@@ -82,6 +81,5 @@ def send_sell_order(data):
             server.login(config.email_user, config.email_password)
             server.sendmail(config.email_sender, config.email_receivers, email_msg.as_string())
             server.quit()
-            print('Alert has been sent by email.')
     else:
-        print('INFO: Email alerts are disabled.')
+        pass
