@@ -4,9 +4,9 @@
 # File Name             : main.py                 #
 # ----------------------------------------------- #
 
-import config as config
+import config
 from flask import Flask, request, abort
-from handler import send_buy_order, send_sell_order
+from handler import *
 
 app = Flask(__name__)
     
@@ -16,11 +16,11 @@ def webhook():
         data = request.get_data(as_text=True)
         if config.Buy_Alert in data:
             print('Alert Received:', data)
-            send_buy_order(data)
+            send_alert(data)
             return '', 200
         elif config.Sell_Alert in data:
             print('Alert Received:', data)
-            send_sell_order(data)
+            send_alert(data)
             return '', 200
         else:
             abort(400)
