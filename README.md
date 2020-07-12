@@ -8,7 +8,6 @@
     <br /><a href="https://github.com/sixBit/TradingView-Webhook-Bot/stargazers"><img src="https://img.shields.io/github/stars/sixbit/TradingView-Webhook-Bot?style=social" alt="GitHub stars"></a>
     <a href="https://github.com/sixBit/TradingView-Webhook-Bot/network/members"><img src="https://img.shields.io/github/forks/sixbit/TradingView-Webhook-Bot?style=social" alt="GitHub forks"></a>
     <a href="https://github.com/sixBit/TradingView-Webhook-Bot/watchers"><img src="https://img.shields.io/github/watchers/sixbit/TradingView-Webhook-Bot?style=social" alt="GitHub watchers"></a>
-    <br /><a href="https://conversations.im/j/codehub@room.sixbit.io"><img src="https://inverse.chat/badge.svg?room=codehub@room.sixbit.io" alt="Join XMPP Server"></a>
 </p>
 
 <p align="center">
@@ -24,7 +23,8 @@
 </p>
 
 ## About
-The **TradingView Webhook Bot** ⚙️ listens to [TradingView](https://tradingview.com) alerts via [webhooks](https://www.tradingview.com/support/solutions/43000529348-i-want-to-know-more-about-webhooks/) using [flask](https://flask.palletsprojects.com/en/1.1.x/). All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email. 
+The **TradingView Webhook Bot** ⚙️ listens to [TradingView](https://tradingview.com) alerts via [webhooks](https://www.tradingview.com/support/solutions/43000529348-i-want-to-know-more-about-webhooks/) using [flask](https://flask.palletsprojects.com/en/1.1.x/).
+All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email. 
 
 ## Features
 - Telegram Support using the [Python Telegram](https://github.com/python-telegram-bot/python-telegram-bot) libary
@@ -32,7 +32,7 @@ The **TradingView Webhook Bot** ⚙️ listens to [TradingView](https://tradingv
 - Twitter Support using the [tweepy](https://github.com/tweepy/tweepy) libary
 - Email Support using [smtplib](https://docs.python.org/3/library/smtplib.html)
 - Alert channels can be enabled or disabled in [`config.py`](https://github.com/sixBit/TradingView-Webhook-Bot/blob/master/config.py)
-- Differentiate between Buy and Sell alerts
+- Whitelisted words can be easily added in [`config.py`](https://github.com/sixBit/TradingView-Webhook-Bot/blob/master/config.py)
 - TradingView `{{close}}`, `{{exchange}}` etc. variables support. Read more [here](https://www.tradingview.com/blog/en/introducing-variables-in-alerts-14880/)
 
 > 💡 Got a feature idea? Open an [issue](https://github.com/sixBit/Telegram-Webhook-Bot/issues/new) and I might implement it.

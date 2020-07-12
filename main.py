@@ -5,27 +5,31 @@
 # ----------------------------------------------- #
 
 import config
-from flask import Flask, request, abort
+import time
+from flask import Flask, request
 from handler import *
 
+timestamp = time.strftime("%Y-%m-%d %X")
 app = Flask(__name__)
-    
+
 @app.route('/webhook', methods=['POST'])
 def webhook():
-    if request.method == 'POST':
-        data = request.get_data(as_text=True)
-        if config.Buy_Alert in data:
-            print('Alert Received:', data)
-            send_alert(data)
-            return '', 200
-        elif config.Sell_Alert in data:
-            print('Alert Received:', data)
-            send_alert(data)
-            return '', 200
+    try:
+        if request.method == 'POST':
+            data = request.get_data(as_text=True)
+            for whitelisted in config.whitelisted:
+                if whitelisted.lower() in data.lower():
+                    print('[✓]', timestamp, 'Alert Received & Sent!\n>', data)
+                    send_alert(data)
+                    return 'Sent alert', 200
+            else:
+                print('[✗]', timestamp, 'Alert Received & Refused!\n>', data)
+                return 'Refused alert', 400
         else:
-            abort(400)
-    else:
-        abort(400)
+            return 'Refused alert', 400
+    except Exception as e:
+        print('[✘]', timestamp, 'Error:\n>', e)
+        return 'Error', 400
 
 if __name__ == '__main__':
     from waitress import serve
