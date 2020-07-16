@@ -35,7 +35,7 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 - Whitelisted words can be easily added in [`config.py`](https://github.com/sixBit/TradingView-Webhook-Bot/blob/master/config.py)
 - TradingView `{{close}}`, `{{exchange}}` etc. variables support. Read more [here](https://www.tradingview.com/blog/en/introducing-variables-in-alerts-14880/)
 
-> 💡 Got a feature idea? Open an [issue](https://github.com/sixBit/Telegram-Webhook-Bot/issues/new) and I might implement it.
+> 💡 Got a feature idea? Open an [issue](https://github.com/sixBit/TradingView-Webhook-Bot/issues/new) and I might implement it.
 
 ## Installation
 > ⚠️ Best to run the bot on a VPS. I can recommend [vultr](https://sixbit.io/vultr).
@@ -46,7 +46,8 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 1. Edit and update [`config.py`](https://github.com/sixBit/TradingView-Webhook-Bot/blob/master/config.py)
 1. Setup TradingView alerts as shown [here](https://i.imgur.com/71UYTcu.png)
     - TradingViews variables like `{{close}}`, `{{exchange}}` etc. work as well. More can be found [here](https://www.tradingview.com/blog/en/introducing-variables-in-alerts-14880/)
-    - Your webhook url would be `http://YOUR-IP/webhook`
+    - Your webhook url would be `http://<YOUR-IP>/webhook`
+1. If you use a firewall be sure to open port the corresponding port
 1. Run the bot `python main.py`
 
 *It is recommended to run flask on a different port like 8080. It is then necessary to forward port 80 to 8080.*

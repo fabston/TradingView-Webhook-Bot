@@ -27,7 +27,7 @@ if twitter:
 def send_alert(data):
     if telegram:
         try:
-            tg_bot.sendMessage(config.channel, data)
+            tg_bot.sendMessage(config.channel, data, parse_mode = 'MARKDOWN')
         except Exception as e:
             print(e) 
     else:
