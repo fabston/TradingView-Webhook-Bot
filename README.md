@@ -57,4 +57,4 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 
 ## How can I help?
 All kinds of contributions are welcome!
-The most basic way to show your support is to `⭐️ star` the project, or to raise [`🐞issues`](https://github.com/fspranger/TradingView-Webhook-Bot/issues/new).
+The most basic way to show your support is to `⭐️ star` the project, or to raise [`🐞issues`](https://github.com/fspranger/TradingView-Webhook-Bot/issues/new). To keep me going you could also buy me a [`☕️ coffee`](https://spranger.dev/coffee). Any kind of support means a lot to me. 🙌

@@ -1,6 +1,6 @@
 # ----------------------------------------------- #
 # Plugin Name           : TradingView-Webhook-Bot #
-# Author Name           : sixBit                  #
+# Author Name           : fspranger               #
 # File Name             : handler.py              #
 # ----------------------------------------------- #
 
