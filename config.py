@@ -1,6 +1,6 @@
 # ----------------------------------------------- #
 # Plugin Name           : TradingView-Webhook-Bot #
-# Author Name           : fspranger               #
+# Author Name           : TheDevFab               #
 # File Name             : config.py               #
 # ----------------------------------------------- #
 
