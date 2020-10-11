@@ -1,0 +1,9 @@
+---
+version: '3.5'
+services:
+    tradingview-webhook-bot:
+        build: .
+        container_name: tradingview-webhook-bot
+        ports:
+            - '80:80'
+        restart: unless-stopped
