@@ -18,7 +18,7 @@ def webhook():
         if request.method == 'POST':
             data = request.get_data(as_text=True)
             for whitelisted in config.whitelisted:
-                if whitelisted.lower() in data.lower():
+                if whitelisted.lower() in data.lower() and config.sec_code in data:
                     print('[✓]', timestamp, 'Alert Received & Sent!\n>', data)
                     send_alert(data)
                     return 'Sent alert', 200
