@@ -10,6 +10,8 @@ whitelisted = [
     'buy alert', 'sell alert'
     ]
 
+sec_code = ''
+
 # Telegram Settings
 send_telegram_alerts = False
 tg_token   = ''  # Bot token. Get it from @Botfather
