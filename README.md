@@ -38,7 +38,7 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 > 💡 Got a feature idea? Open an [issue](https://github.com/TheDevFab/TradingView-Webhook-Bot/issues/new) and I might implement it.
 
 ## Installation
-> ⚠️ Best to run the bot on a VPS. I can recommend [Hetzner](https://hetzner.com/).
+> ⚠️ Best to run the bot on a VPS. I can recommend [Hetzner](https://hetzner.cloud/?ref=tQ1NdT8zbfNY).
 1. Clone this repository `git clone https://github.com/TheDevFab/TradingView-Webhook-Bot.git`
 1. Create your virtual environment `python3 -m venv TradingView-Webhook-Bot`
 1. Activate it `source TradingView-Webhook-Bot/bin/activate && TradingView-Webhook-Bot`
@@ -57,4 +57,4 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 
 ## How can I help?
 All kinds of contributions are welcome!
-The most basic way to show your support is to `⭐️ star` the project, or to raise [`🐞issues`](https://github.com/TheDevFab/TradingView-Webhook-Bot/issues/new). To keep me going you could also buy me a [`☕️ coffee`](http://fabian.cx/buymeacoffee). Any kind of support means a lot to me. 🙌
+The most basic way to show your support is to `⭐️ star` the project, or to raise [`🐞issues`](https://github.com/TheDevFab/TradingView-Webhook-Bot/issues/new).
