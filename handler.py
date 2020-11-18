@@ -1,6 +1,6 @@
 # ----------------------------------------------- #
 # Plugin Name           : TradingView-Webhook-Bot #
-# Author Name           : TheDevFab               #
+# Author Name           : vsnz                    #
 # File Name             : handler.py              #
 # ----------------------------------------------- #
 
