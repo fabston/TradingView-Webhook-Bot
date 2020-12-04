@@ -26,6 +26,8 @@
 The **TradingView Webhook Bot** ⚙️ listens to [TradingView](https://tradingview.com) alerts via [webhooks](https://www.tradingview.com/support/solutions/43000529348-i-want-to-know-more-about-webhooks/) using [flask](https://flask.palletsprojects.com/en/1.1.x/).
 All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email. 
 
+> 🔥 You are unsure how to host the bot yourself? No problem, I can help you out with that. Just [contact me](https://github.com/vsnz/vsnz/blob/main/CONTACT.md) directly.
+
 ## Features
 - Telegram Support using the [Python Telegram](https://github.com/python-telegram-bot/python-telegram-bot) libary
 - Discord Support using [webhooks](https://support.discord.com/hc/de/articles/228383668-Webhooks-verwenden)
