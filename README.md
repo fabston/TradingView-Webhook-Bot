@@ -58,6 +58,10 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 ![Webhook Bot](https://i.imgur.com/vZA42cc.png)
 
 ## How can I help?
-All kinds of contributions are welcome 🙌! The most basic way to show your support is to `⭐️ star` the project, or raise [`🐞 issues`](https://github.com/vsnz/TradingView-Webhook-Bot/issues/new). You can also buy me some [☕️ coffee](https://www.buymeacoffee.com/vsnz) to help keep me productive!
+All kinds of contributions are welcome 🙌! The most basic way to show your support is to `⭐️ star` the project, or raise [`🐞 issues`](https://github.com/vsnz/TradingView-Webhook-Bot/issues/new).
 
-Thanks again for your support, it is much appreciated! 🙏
+***
+
+<p align="center">
+    <a href="https://liberapay.com/vsnz/donate"><img alt="Donate using LiberaPay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+</p>
