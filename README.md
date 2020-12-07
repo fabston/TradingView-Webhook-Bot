@@ -43,7 +43,7 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 > ⚠️ Best to run the bot on a VPS. I can recommend [Hetzner](https://hetzner.cloud/?ref=tQ1NdT8zbfNY).
 1. Clone this repository `git clone https://github.com/vsnz/TradingView-Webhook-Bot.git`
 1. Create your virtual environment `python3 -m venv TradingView-Webhook-Bot`
-1. Activate it `source TradingView-Webhook-Bot/bin/activate && TradingView-Webhook-Bot`
+1. Activate it `source TradingView-Webhook-Bot/bin/activate && cd TradingView-Webhook-Bot`
 1. Install all requirements `pip install -r requirements.txt`
 1. Edit and update [`config.py`](https://github.com/vsnz/TradingView-Webhook-Bot/blob/master/config.py)
 1. Setup TradingView alerts as shown [here](https://i.imgur.com/71UYTcu.png)
