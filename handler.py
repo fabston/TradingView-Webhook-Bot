@@ -6,25 +6,34 @@
 
 import config
 from telegram import Bot
-from discord_webhook import DiscordWebhook
+from discord_webhook import DiscordWebhook, DiscordEmbed
 import tweepy
 import smtplib, ssl
 from email.mime.text import MIMEText
-    
+
 def send_alert(data):
     if config.send_telegram_alerts:
+        tg_bot = Bot(token=config.tg_token)
         try:
-            tg_bot = Bot(token=config.tg_token)
-            tg_bot.sendMessage(config.channel, data, parse_mode = 'MARKDOWN')
-        except Exception as e:
-            print(e) 
-        
+            tg_bot.sendMessage(data['telegram'], data['msg'], parse_mode='MARKDOWN')
+        except KeyError:
+            tg_bot.sendMessage(config.channel, data['msg'], parse_mode='MARKDOWN')
+        except Exception as e: 
+            print('[X] Telegram Error:\n>', e)
+            
     if config.send_discord_alerts:
         try:
-            discord_alert = DiscordWebhook(url=config.discord_webhook, content=data)
-            response = discord_alert.execute()
-        except Exception as e:
-            print(e) 
+            webhook = DiscordWebhook(url="https://discord.com/api/webhooks/" + data['discord'])
+            embed = DiscordEmbed(title=data['msg'])
+            webhook.add_embed(embed)
+            response = webhook.execute()
+        except KeyError:
+            webhook = DiscordWebhook(url="https://discord.com/api/webhooks/" + config.discord_webhook)
+            embed = DiscordEmbed(title=data['msg'])
+            webhook.add_embed(embed)
+            response = webhook.execute()
+        except Exception as e: 
+            print('[X] Discord Error:\n>', e)
         
     if config.send_twitter_alerts:
         tw_auth = tweepy.OAuthHandler(config.tw_ckey, config.tw_csecret)
@@ -33,7 +42,7 @@ def send_alert(data):
         try:
             tw_api.update_status(status=data)
         except Exception as e:
-            print(e) 
+            print('[X] Twitter Error:\n>', e)
         
     if config.send_email_alerts:
         try:
@@ -47,4 +56,4 @@ def send_alert(data):
                 server.sendmail(config.email_sender, config.email_receivers, email_msg.as_string())
                 server.quit()
         except Exception as e:
-            print(e) 
+            print('[X] Email Error:\n>', e)

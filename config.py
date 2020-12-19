@@ -4,13 +4,10 @@
 # File Name             : config.py               #
 # ----------------------------------------------- #
 
-# Alert message in TradingView (ex. https://i.imgur.com/RFkuf1d.png)
-# !! Case insensitive !!
-whitelisted = [
-    'buy alert', 'sell alert'
-    ]
+# TradingView Example Alert Message:
+# {"key": "9T2q394M92", "telegram": "-1001298977502", "discord": "789842349670960670/BFeBBrCt-w2Z9RJ2wlH6TWUjM5bJuC29aJaJ5OQv9sE6zCKY_AlOxxFwRURkgEl852s3","msg": "Long #{{ticker}} at `{{close}}`"}
 
-sec_code = ''
+sec_key = ''  # Can be anything. Has to match with "key" in your TradingView alert message
 
 # Telegram Settings
 send_telegram_alerts = False

@@ -7,28 +7,29 @@
 import config
 import time
 from flask import Flask, request
+import json
 from handler import *
 
 timestamp = time.strftime("%Y-%m-%d %X")
 app = Flask(__name__)
 
-@app.route('/webhook', methods=['POST'])
+@app.route('/webhook',  methods=['POST'])
 def webhook():
     try:
         if request.method == 'POST':
-            data = request.get_data(as_text=True)
-            for whitelisted in config.whitelisted:
-                if whitelisted.lower() in data.lower() and config.sec_code in data:
-                    print('[✓]', timestamp, 'Alert Received & Sent!\n>', data)
-                    send_alert(data)
-                    return 'Sent alert', 200
+            data = request.get_json()
+            key = data['key']
+            if key == config.sec_key:
+                print(timestamp, 'Alert Received & Sent!')
+                send_alert(data)
+                return 'Sent alert', 200
+
             else:
-                print('[✗]', timestamp, 'Alert Received & Refused!\n>', data)
+                print('[X]', timestamp, 'Alert Received & Refused! (Wrong Key)')
                 return 'Refused alert', 400
-        else:
-            return 'Refused alert', 400
+                
     except Exception as e:
-        print('[✘]', timestamp, 'Error:\n>', e)
+        print('[X]', timestamp, 'Error:\n>', e)
         return 'Error', 400
 
 if __name__ == '__main__':

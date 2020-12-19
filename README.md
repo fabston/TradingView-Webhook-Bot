@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/vsnz/TradingView-Webhook-Bot" target="https://blocklist.vsnz.net"><img src="https://raw.githubusercontent.com/vsnz/TradingView-Webhook-Bot/master/assets/logo.png"></a></p>
+<p align="center"><a href="https://github.com/vsnz/TradingView-Webhook-Bot" target="_blank"><img src="https://raw.githubusercontent.com/vsnz/TradingView-Webhook-Bot/master/assets/logo.png"></a></p>
 
 <p align="center">
     <a href="https://www.python.org/downloads/release/python-380/"><img src="https://img.shields.io/badge/python-3.8-blue.svg?style=plastic" alt="Python version"></a>
@@ -34,23 +34,29 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 - Twitter Support using the [tweepy](https://github.com/tweepy/tweepy) libary
 - Email Support using [smtplib](https://docs.python.org/3/library/smtplib.html)
 - Alert channels can be enabled or disabled in [`config.py`](https://github.com/vsnz/TradingView-Webhook-Bot/blob/master/config.py)
-- Whitelisted words can be easily added in [`config.py`](https://github.com/vsnz/TradingView-Webhook-Bot/blob/master/config.py)
+- Dynamically send alerts to different Telegram and/or Discord channels
 - TradingView `{{close}}`, `{{exchange}}` etc. variables support. Read more [here](https://www.tradingview.com/blog/en/introducing-variables-in-alerts-14880/)
 
 > 💡 Got a feature idea? Open an [issue](https://github.com/vsnz/TradingView-Webhook-Bot/issues/new) and I might implement it.
 
 ## Installation
-> ⚠️ Best to run the bot on a VPS. I can recommend [Hetzner](https://hetzner.cloud/?ref=tQ1NdT8zbfNY).
+> ⚠️ Best to run the bot on a VPS. I can recommend <a href="https://vsnz.net/hetzner" title="Get €20 in cloud credits">Hetzner</a>'s CX11 VPS for 2.89€/month.
 1. Clone this repository `git clone https://github.com/vsnz/TradingView-Webhook-Bot.git`
 1. Create your virtual environment `python3 -m venv TradingView-Webhook-Bot`
 1. Activate it `source TradingView-Webhook-Bot/bin/activate && cd TradingView-Webhook-Bot`
 1. Install all requirements `pip install -r requirements.txt`
 1. Edit and update [`config.py`](https://github.com/vsnz/TradingView-Webhook-Bot/blob/master/config.py)
-1. Setup TradingView alerts as shown [here](https://i.imgur.com/71UYTcu.png)
-    - TradingViews variables like `{{close}}`, `{{exchange}}` etc. work as well. More can be found [here](https://www.tradingview.com/blog/en/introducing-variables-in-alerts-14880/)
+1. Setup TradingView alerts. An example alert message would be:
+    ```
+    {"key": "9T2q394M92", "telegram": "-1001277977502", "discord": "789842341870960670/BFeBBrCt-w2Z9RJ2wlH6TWUjM5bJuC29aJaJ5OQv9sE6zCKY_AlOxxFwRURkgEl852s3", "msg": "Long #{{ticker}} at `{{close}}`"}
+    ```
+    - `key` is mandatory! It has to match with `sec_key` in [`config.py`](https://github.com/vsnz/TradingView-Webhook-Bot/blob/master/config.py). It's an extra security measurement to ensure nobody else is executing your alerts
+    - `telegram` and `discord` is optional. If it is not set it will fall back to the config.py settings
+    - `msg` can be anything. Markdown for [Telegram](https://core.telegram.org/api/entities) and [Discord](https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-) is supported as well
+        - TradingViews variables like `{{close}}`, `{{exchange}}` etc. work too. More can be found [here](https://www.tradingview.com/blog/en/introducing-variables-in-alerts-14880/)
     - Your webhook url would be `http://<YOUR-IP>/webhook`
-1. If you use a firewall be sure to open port the corresponding port
-1. Run the bot `python main.py`
+1. If you use a firewall be sure to open the corresponding port
+1. Run the bot with `python main.py`
 
 *It is recommended to run flask on a different port like 8080. It is then necessary to forward port 80 to 8080.*
 
