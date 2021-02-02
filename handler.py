@@ -15,9 +15,9 @@ def send_alert(data):
     if config.send_telegram_alerts:
         tg_bot = Bot(token=config.tg_token)
         try:
-            tg_bot.sendMessage(data['telegram'], data['msg'], parse_mode='MARKDOWN')
+            tg_bot.sendMessage(data['telegram'], data['msg'].replace('_', '\_'), parse_mode='MARKDOWN')
         except KeyError:
-            tg_bot.sendMessage(config.channel, data['msg'], parse_mode='MARKDOWN')
+            tg_bot.sendMessage(config.channel, data['msg'].replace('_', '\_'), parse_mode='MARKDOWN')
         except Exception as e: 
             print('[X] Telegram Error:\n>', e)
             

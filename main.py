@@ -10,9 +10,12 @@ from flask import Flask, request
 import json
 from handler import *
 
-timestamp = time.strftime("%Y-%m-%d %X")
 app = Flask(__name__)
 
+def get_timestamp():
+    timestamp = time.strftime("%Y-%m-%d %X")
+    return timestamp
+    
 @app.route('/webhook',  methods=['POST'])
 def webhook():
     try:
@@ -20,16 +23,16 @@ def webhook():
             data = request.get_json()
             key = data['key']
             if key == config.sec_key:
-                print(timestamp, 'Alert Received & Sent!')
+                print(get_timestamp(), 'Alert Received & Sent!')
                 send_alert(data)
                 return 'Sent alert', 200
 
             else:
-                print('[X]', timestamp, 'Alert Received & Refused! (Wrong Key)')
+                print('[X]', get_timestamp(), 'Alert Received & Refused! (Wrong Key)')
                 return 'Refused alert', 400
                 
     except Exception as e:
-        print('[X]', timestamp, 'Error:\n>', e)
+        print('[X]', get_timestamp(), 'Error:\n>', e)
         return 'Error', 400
 
 if __name__ == '__main__':
