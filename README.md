@@ -65,6 +65,7 @@ I am running my own TradingView Webhook Service. No setup and hosting required. 
     - Your webhook url would be `http://<YOUR-IP>/webhook`
 1. If you use a firewall be sure to open the corresponding port
 1. Run the bot with `python main.py`
+1. [PM2](https://github.com/vsnz/TradingView-Webhook-Bot/issues/28#issuecomment-766301062) can help you in running the app in the background / on system boot. 
 
 *It is recommended to run flask on a different port like 8080. It is then necessary to forward port 80 to 8080.*
 
