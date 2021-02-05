@@ -32,6 +32,7 @@ I am running my own TradingView Webhook Service. No setup and hosting required. 
 ## Features
 - Telegram Support using the [Python Telegram](https://github.com/python-telegram-bot/python-telegram-bot) libary
 - Discord Support using [webhooks](https://support.discord.com/hc/de/articles/228383668-Webhooks-verwenden)
+- Slack Support using [webhooks](https://api.slack.com/messaging/webhooks)
 - Twitter Support using the [tweepy](https://github.com/tweepy/tweepy) libary
 - Email Support using [smtplib](https://docs.python.org/3/library/smtplib.html)
 - Alert channels can be enabled or disabled in [`config.py`](https://github.com/vsnz/TradingView-Webhook-Bot/blob/master/config.py)
@@ -49,10 +50,16 @@ I am running my own TradingView Webhook Service. No setup and hosting required. 
 1. Edit and update [`config.py`](https://github.com/vsnz/TradingView-Webhook-Bot/blob/master/config.py)
 1. Setup TradingView alerts. An example alert message would be:
     ```json
-    {"key": "9T2q394M92", "telegram": "-1001277977502", "discord": "789842341870960670/BFeBBrCt-w2Z9RJ2wlH6TWUjM5bJuC29aJaJ5OQv9sE6zCKY_AlOxxFwRURkgEl852s3", "msg": "Long #{{ticker}} at `{{close}}`"}
+    {
+     "key": "9T2q394M92",
+     "telegram": "-1001277977502",
+     "discord": "789842341870960670/BFeBBrCt-w2Z9RJ2wlH6TWUjM5bJuC29aJaJ5OQv9sE6zCKY_AlOxxFwRURkgEl852s3",
+     "slack": "T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX",
+     "msg": "Long *#{{ticker}}* at `{{close}}`"
+    }
     ```
     - `key` is mandatory! It has to match with `sec_key` in [`config.py`](https://github.com/vsnz/TradingView-Webhook-Bot/blob/master/config.py). It's an extra security measurement to ensure nobody else is executing your alerts
-    - `telegram` and `discord` is optional. If it is not set it will fall back to the config.py settings
+    - `telegram`, `discord`, `slack` is optional. If it is not set it will fall back to the config.py settings
     - `msg` can be anything. Markdown for [Telegram](https://core.telegram.org/api/entities) and [Discord](https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-) is supported as well
         - TradingViews variables like `{{close}}`, `{{exchange}}` etc. work too. More can be found [here](https://www.tradingview.com/blog/en/introducing-variables-in-alerts-14880/)
     - Your webhook url would be `http://<YOUR-IP>/webhook`

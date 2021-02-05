@@ -7,6 +7,7 @@
 import config
 from telegram import Bot
 from discord_webhook import DiscordWebhook, DiscordEmbed
+from slack_webhook import Slack
 import tweepy
 import smtplib, ssl
 from email.mime.text import MIMEText
@@ -34,7 +35,17 @@ def send_alert(data):
             response = webhook.execute()
         except Exception as e: 
             print('[X] Discord Error:\n>', e)
-        
+
+    if config.send_slack_alerts:
+        try:
+            slack = Slack(url='https://hooks.slack.com/services/' + data['slack'])
+            slack.post(text=data['msg'])
+        except KeyError:
+            slack = Slack(url='https://hooks.slack.com/services/' + config.slack_webhook)
+            slack.post(text=data['msg'])
+        except Exception as e: 
+            print('[X] Slack Error:\n>', e)
+
     if config.send_twitter_alerts:
         tw_auth = tweepy.OAuthHandler(config.tw_ckey, config.tw_csecret)
         tw_auth.set_access_token(config.tw_atoken, config.tw_asecret)
