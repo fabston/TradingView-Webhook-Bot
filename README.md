@@ -26,7 +26,8 @@
 The **TradingView Webhook Bot** ⚙️ listens to [TradingView](https://tradingview.com) alerts via [webhooks](https://www.tradingview.com/support/solutions/43000529348-i-want-to-know-more-about-webhooks/) using [flask](https://flask.palletsprojects.com/en/1.1.x/).
 All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email. 
 
-> 🔥 You are unsure how to host the bot yourself? No problem, I can help you out with that. Just [contact me](https://github.com/vsnz/vsnz/blob/main/CONTACT.md) directly.
+### TV-Alerts.com 🔥
+I am running my own TradingView Webhook Service. No setup and hosting required. Send all your alerts to Telegram, Discord, Slack & Twitter along with a **full screenshot of the chart** complete with your indicators. More at [TV-Alerts.com](https://tv-alerts.com). Got a question? Let me know!
 
 ## Features
 - Telegram Support using the [Python Telegram](https://github.com/python-telegram-bot/python-telegram-bot) libary
@@ -47,7 +48,7 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 1. Install all requirements `pip install -r requirements.txt`
 1. Edit and update [`config.py`](https://github.com/vsnz/TradingView-Webhook-Bot/blob/master/config.py)
 1. Setup TradingView alerts. An example alert message would be:
-    ```
+    ```json
     {"key": "9T2q394M92", "telegram": "-1001277977502", "discord": "789842341870960670/BFeBBrCt-w2Z9RJ2wlH6TWUjM5bJuC29aJaJ5OQv9sE6zCKY_AlOxxFwRURkgEl852s3", "msg": "Long #{{ticker}} at `{{close}}`"}
     ```
     - `key` is mandatory! It has to match with `sec_key` in [`config.py`](https://github.com/vsnz/TradingView-Webhook-Bot/blob/master/config.py). It's an extra security measurement to ensure nobody else is executing your alerts
