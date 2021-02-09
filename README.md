@@ -78,5 +78,5 @@ All kinds of contributions are welcome 🙌! The most basic way to show your sup
 ***
 
 <p align="center">
-    <a href="https://liberapay.com/vsnz/donate"><img alt="Donate using LiberaPay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+    <a href="https://www.buymeacoffee.com/vsnz"><img alt="Buy Me A Coffee" title="☕️" src="https://raw.githubusercontent.com/vsnz/TradingView-Webhook-Bot/master/assets/bmac.png" width=200px></a>
 </p>
