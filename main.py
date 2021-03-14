@@ -1,6 +1,6 @@
 # ----------------------------------------------- #
 # Plugin Name           : TradingView-Webhook-Bot #
-# Author Name           : vsnz                    #
+# Author Name           : fabston                 #
 # File Name             : main.py                 #
 # ----------------------------------------------- #
 
