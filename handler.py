@@ -56,13 +56,13 @@ def send_alert(data):
         tw_auth.set_access_token(config.tw_atoken, config.tw_asecret)
         tw_api = tweepy.API(tw_auth)
         try:
-            tw_api.update_status(status=data['msg'])
+            tw_api.update_status(status=data['msg'].replace('*', '').replace('_', '').replace('`', ''))
         except Exception as e:
             print('[X] Twitter Error:\n>', e)
 
     if config.send_email_alerts:
         try:
-            email_msg = MIMEText(data)
+            email_msg = MIMEText(data['msg'].replace('*', '').replace('_', '').replace('`', ''))
             email_msg['Subject'] = config.email_subject
             email_msg['From'] = config.email_sender
             email_msg['To'] = config.email_sender
