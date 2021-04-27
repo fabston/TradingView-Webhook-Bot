@@ -56,7 +56,7 @@ def send_alert(data):
         tw_auth.set_access_token(config.tw_atoken, config.tw_asecret)
         tw_api = tweepy.API(tw_auth)
         try:
-            tw_api.update_status(status=data)
+            tw_api.update_status(status=data['msg'])
         except Exception as e:
             print('[X] Twitter Error:\n>', e)
 
