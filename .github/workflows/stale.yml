@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/stale@v3
+    - uses: actions/stale@main
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         stale-issue-message: 'It looks like this has been idle a while, so I am marking it as stale. Remove the label or comment if this issue should remain open.'
