@@ -48,7 +48,7 @@ Find out more at [WebhookAlerts.com](https://webhookalerts.com). Got a question?
 > 💡 Got a feature idea? Open an [issue](https://github.com/fabston/TradingView-Webhook-Bot/issues/new?assignees=&labels=enhancement&template=feature-request---.md) and I might implement it.
 
 ## Installation
-> ⚠️ Best to run the bot on a VPS. I can recommend <a href="https://fabston.dev/hetzner" title="Get €20 in cloud credits">Hetzner</a>'s CX11 VPS for 2.89€/month.
+> ⚠️ Best to run the bot on a VPS. I can recommend <a href="https://fabston.dev/hetzner" title="Get €20 in cloud credits">Hetzner</a>'s CX11 VPS for 2.89€/month. [Sign up](https://fabston.dev/hetzner) now and receive **€20 free** credits.
 1. Clone this repository `git clone https://github.com/fabston/TradingView-Webhook-Bot.git`
 1. Create your virtual environment `python3 -m venv TradingView-Webhook-Bot`
 1. Activate it `source TradingView-Webhook-Bot/bin/activate && cd TradingView-Webhook-Bot`
@@ -73,13 +73,19 @@ Find out more at [WebhookAlerts.com](https://webhookalerts.com). Got a question?
 1. Run the bot with `python main.py`
 1. [PM2](https://github.com/fabston/TradingView-Webhook-Bot/issues/28#issuecomment-766301062) can help you in running the app in the background / on system boot. 
 
+### Docker
+1. Clone this repository `git clone https://github.com/fabston/TradingView-Webhook-Bot.git`
+1. Edit and update [`config.py`](https://github.com/fabston/TradingView-Webhook-Bot/blob/master/config.py)
+1. `docker-compose build`
+1. `docker-compuse up`
+
 *It is recommended to run flask on a different port like 8080. It is then necessary to forward port 80 to 8080.*
 
 ## Images
 ![Webhook Bot](https://i.imgur.com/vZA42cc.png)
 
 ## How can I help?
-All kinds of contributions are welcome 🙌! The most basic way to show your support is to `⭐️ star` the project, or raise [`🐞 issues`](https://github.com/fabston/TradingView-Webhook-Bot/issues/new/choose). You can also support this project by becoming a [sponsor on GitHub](https://github.com/sponsors/fabston) to ensure this journey continues indefinitely! 🚀
+All kinds of contributions are welcome 🙌! The most basic way to show your support is to `⭐️ star` the project, or raise [`🐞 issues`](https://github.com/fabston/TradingView-Webhook-Bot/issues/new/choose). You can also support this project by becoming a [`💚 sponsor on GitHub`](https://github.com/sponsors/fabston) to ensure this journey continues indefinitely! 🚀
 
 ***
 
