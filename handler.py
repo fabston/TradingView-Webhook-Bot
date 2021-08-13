@@ -17,22 +17,19 @@ import config
 
 
 def send_alert(data):
+    msg = data["msg"].encode("latin-1", "backslashreplace").decode("unicode_escape")
     if config.send_telegram_alerts:
         tg_bot = Bot(token=config.tg_token)
         try:
             tg_bot.sendMessage(
                 data["telegram"],
-                data["msg"]
-                .encode("latin-1", "backslashreplace")
-                .decode("unicode_escape"),
+                msg,
                 parse_mode="MARKDOWN",
             )
         except KeyError:
             tg_bot.sendMessage(
                 config.channel,
-                data["msg"]
-                .encode("latin-1", "backslashreplace")
-                .decode("unicode_escape"),
+                msg,
                 parse_mode="MARKDOWN",
             )
         except Exception as e:
@@ -43,14 +40,14 @@ def send_alert(data):
             webhook = DiscordWebhook(
                 url="https://discord.com/api/webhooks/" + data["discord"]
             )
-            embed = DiscordEmbed(title=data["msg"])
+            embed = DiscordEmbed(title=msg)
             webhook.add_embed(embed)
             webhook.execute()
         except KeyError:
             webhook = DiscordWebhook(
                 url="https://discord.com/api/webhooks/" + config.discord_webhook
             )
-            embed = DiscordEmbed(title=data["msg"])
+            embed = DiscordEmbed(title=msg)
             webhook.add_embed(embed)
             webhook.execute()
         except Exception as e:
@@ -59,12 +56,12 @@ def send_alert(data):
     if config.send_slack_alerts:
         try:
             slack = Slack(url="https://hooks.slack.com/services/" + data["slack"])
-            slack.post(text=data["msg"])
+            slack.post(text=msg)
         except KeyError:
             slack = Slack(
                 url="https://hooks.slack.com/services/" + config.slack_webhook
             )
-            slack.post(text=data["msg"])
+            slack.post(text=msg)
         except Exception as e:
             print("[X] Slack Error:\n>", e)
 
@@ -74,7 +71,7 @@ def send_alert(data):
         tw_api = tweepy.API(tw_auth)
         try:
             tw_api.update_status(
-                status=data["msg"].replace("*", "").replace("_", "").replace("`", "")
+                status=msg.replace("*", "").replace("_", "").replace("`", "")
             )
         except Exception as e:
             print("[X] Twitter Error:\n>", e)
@@ -82,7 +79,7 @@ def send_alert(data):
     if config.send_email_alerts:
         try:
             email_msg = MIMEText(
-                data["msg"].replace("*", "").replace("_", "").replace("`", "")
+                msg.replace("*", "").replace("_", "").replace("`", "")
             )
             email_msg["Subject"] = config.email_subject
             email_msg["From"] = config.email_sender
