@@ -77,7 +77,7 @@ Find out more at [WebhookAlerts.com](https://webhookalerts.com). Got a question?
 1. Clone this repository `git clone https://github.com/fabston/TradingView-Webhook-Bot.git`
 1. Edit and update [`config.py`](https://github.com/fabston/TradingView-Webhook-Bot/blob/master/config.py)
 1. `docker-compose build`
-1. `docker-compuse up`
+1. `docker-compose up`
 
 *It is recommended to run flask on a different port like 8080. It is then necessary to forward port 80 to 8080.*
 
