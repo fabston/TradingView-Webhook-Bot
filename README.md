@@ -26,13 +26,6 @@
 The **TradingView Webhook Bot** ⚙️ listens to [TradingView](https://tradingview.com) alerts via [webhooks](https://www.tradingview.com/support/solutions/43000529348-i-want-to-know-more-about-webhooks/) using [flask](https://flask.palletsprojects.com/en/1.1.x/).
 All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 
-## [Webhook Alerts](https://webhookalerts.com) 🔥
-I am running my own Webhook Alerts Service. No setup and hosting required!
-
-Send all your alerts to Telegram, Discord, Slack & Twitter along with a **full screenshot of the chart** complete with your indicators.
-
-Find out more at [WebhookAlerts.com](https://webhookalerts.com). Got a question? Let me know!
-
 ---
 
 ## Features
@@ -85,7 +78,7 @@ Find out more at [WebhookAlerts.com](https://webhookalerts.com). Got a question?
 ![Webhook Bot](https://i.imgur.com/vZA42cc.png)
 
 ## How can I help?
-All kinds of contributions are welcome 🙌! The most basic way to show your support is to `⭐️ star` the project, or raise [`🐞 issues`](https://github.com/fabston/TradingView-Webhook-Bot/issues/new/choose). You can also support this project by becoming a [`💚 sponsor on GitHub`](https://github.com/sponsors/fabston) to ensure this journey continues indefinitely! 🚀
+All kinds of contributions are welcome 🙌! The most basic way to show your support is to `⭐️ star` the project, or raise [`🐞 issues`](https://github.com/fabston/TradingView-Webhook-Bot/issues/new/choose).
 
 ***
 
