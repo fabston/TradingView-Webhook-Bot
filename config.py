@@ -16,7 +16,7 @@ sec_key = (
 # Telegram Settings
 send_telegram_alerts = False
 tg_token = ""  # Bot token. Get it from @Botfather
-channel = 0  # Channel ID (ex. -1001487568087)
+channel = 0  # Channel ID (ex. -1001487568087, or "@ChanelName")
 
 # Discord Settings
 send_discord_alerts = False
