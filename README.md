@@ -45,6 +45,7 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 1. Activate it `source TradingView-Webhook-Bot/bin/activate && cd TradingView-Webhook-Bot`
 1. Install all requirements `pip install -r requirements.txt`
 1. Edit and update [`config.py`](https://github.com/fabston/TradingView-Webhook-Bot/blob/master/config.py)
+The Telegram ID should be set as an integer, but in some cases it is needed to define it as a sting, and the set the Channel name insteed the Channel ID.
 1. Setup TradingView alerts. An example alert message would be:
     ```json
     {
@@ -61,6 +62,12 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
         - TradingViews variables like `{{close}}`, `{{exchange}}` etc. work too. More can be found [here](https://www.tradingview.com/blog/en/introducing-variables-in-alerts-14880/)
     - Your webhook url would be `http://<YOUR-IP>/webhook`
 1. If you use a firewall be sure to open the corresponding port
+1. TradingView POST Request are made from the bellow IP Source :
+https://www.tradingview.com/?solution=43000529348
+52.89.214.238
+34.212.75.30
+54.218.53.128
+52.32.178.7
 1. Run the bot with `python main.py`
 1. [PM2](https://github.com/fabston/TradingView-Webhook-Bot/issues/28#issuecomment-766301062) can help you in running the app in the background / on system boot. 
 
