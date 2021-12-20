@@ -39,13 +39,13 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 > 💡 Got a feature idea? Open an [issue](https://github.com/fabston/TradingView-Webhook-Bot/issues/new?assignees=&labels=enhancement&template=feature-request---.md) and I might implement it.
 
 ## Installation
-> ⚠️ Best to run the bot on a VPS. I can recommend <a href="https://hetzner.cloud/?ref=tQ1NdT8zbfNY" title="Get €20 in cloud credits">Hetzner</a>'s CX11 VPS for 2.89€/month. [Sign up](https://hetzner.cloud/?ref=tQ1NdT8zbfNY) now and receive **€20 free** credits.
+>On any VPS
 1. Clone this repository `git clone https://github.com/fabston/TradingView-Webhook-Bot.git`
 1. Create your virtual environment `python3 -m venv TradingView-Webhook-Bot`
 1. Activate it `source TradingView-Webhook-Bot/bin/activate && cd TradingView-Webhook-Bot`
 1. Install all requirements `pip install -r requirements.txt`
 1. Edit and update [`config.py`](https://github.com/fabston/TradingView-Webhook-Bot/blob/master/config.py)
-The Telegram ID should be set as an integer, but in some cases it is needed to define it as a sting, and the set the Channel name insteed the Channel ID.
+1. The Telegram ID should be set as an integer, but in some cases it is needed to define it as a sting, and to set the Channel name (@MyChannel) insteed of the Channel ID (-1001277977502).
 1. Setup TradingView alerts. An example alert message would be:
     ```json
     {
@@ -63,11 +63,11 @@ The Telegram ID should be set as an integer, but in some cases it is needed to d
     - Your webhook url would be `http://<YOUR-IP>/webhook`
 1. If you use a firewall be sure to open the corresponding port
 1. TradingView POST Request are made from the bellow IP Source :
-https://www.tradingview.com/?solution=43000529348
-52.89.214.238
-34.212.75.30
-54.218.53.128
-52.32.178.7
+1. TradingView Ref : https://www.tradingview.com/?solution=43000529348
+1. 52.89.214.238
+1. 34.212.75.30
+1. 54.218.53.128
+1. 52.32.178.7
 1. Run the bot with `python main.py`
 1. [PM2](https://github.com/fabston/TradingView-Webhook-Bot/issues/28#issuecomment-766301062) can help you in running the app in the background / on system boot. 
 
