@@ -67,7 +67,8 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 - 34.212.75.30
 - 54.218.53.128
 - 52.32.178.7
-1. Run the bot with `python main.py`
+
+1. Run manually the bot with `python main.py`
 
 ### Create a service
 
@@ -79,7 +80,6 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 1. You can stop or check the status of the service with the command bellow
 1. systemctl stop telegrambotservice.service
 1. systemctl status telegrambotservice.service
-
 
 
 ### Docker
