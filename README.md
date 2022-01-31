@@ -69,7 +69,19 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 1. 54.218.53.128
 1. 52.32.178.7
 1. Run the bot with `python main.py`
-1. [PM2](https://github.com/fabston/TradingView-Webhook-Bot/issues/28#issuecomment-766301062) can help you in running the app in the background / on system boot. 
+1. [PM2](https://github.com/fabston/TradingView-Webhook-Bot/issues/28#issuecomment-766301062) can help you in running the app in the background / on system boot.
+
+1. Or create a systemctl service:
+1. Create a /root/startbot.sh
+1. Create a directory for logs : mkdir /root/TradingView-Webhook-Bot/logs
+1. Create a service file : /etc/systemd/system/telegrambotservice.service
+1. Start the service : systemctl start telegrambotservice.service
+
+1. You can stop or check the status of the service with the command bellow
+1. systemctl stop telegrambotservice.service
+1. systemctl status telegrambotservice.service
+
+
 
 ### Docker
 1. Clone this repository `git clone https://github.com/fabston/TradingView-Webhook-Bot.git`
