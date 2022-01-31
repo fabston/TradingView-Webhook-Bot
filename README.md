@@ -62,12 +62,11 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
         - TradingViews variables like `{{close}}`, `{{exchange}}` etc. work too. More can be found [here](https://www.tradingview.com/blog/en/introducing-variables-in-alerts-14880/)
     - Your webhook url would be `http://<YOUR-IP>/webhook`
 1. If you use a firewall be sure to open the corresponding port
-1. TradingView POST Request are made from the bellow IP Source :
-1. TradingView Ref : https://www.tradingview.com/?solution=43000529348
-1. 52.89.214.238
-34.212.75.30
-54.218.53.128
-52.32.178.7
+1. TradingView POST Request are made from the bellow IP Source - Ref : https://www.tradingview.com/?solution=43000529348
+- 52.89.214.238
+- 34.212.75.30
+- 54.218.53.128
+- 52.32.178.7
 1. Run the bot with `python main.py`
 
 ### Create a service
