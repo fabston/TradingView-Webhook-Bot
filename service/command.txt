@@ -1,0 +1,7 @@
+cd /etc/systemd/system/
+
+nano telegrambotservice.service
+
+systemctl stop telegrambotservice.service
+systemctl start telegrambotservice.service
+systemctl status telegrambotservice.service

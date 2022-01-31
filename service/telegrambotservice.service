@@ -1,0 +1,13 @@
+[Unit]
+After=network.service
+Description=Telegram Bot Service
+
+[Service]
+Type=simple
+# WorkingDirectory=/code/python/myapp
+ExecStart=/root/startbot.sh
+# User=do-user
+
+[Install]
+WantedBy=multi-user.target
+# WantedBy=default.target
