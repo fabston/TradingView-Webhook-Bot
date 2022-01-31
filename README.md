@@ -65,13 +65,13 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 1. TradingView POST Request are made from the bellow IP Source :
 1. TradingView Ref : https://www.tradingview.com/?solution=43000529348
 1. 52.89.214.238
-1. 34.212.75.30
-1. 54.218.53.128
-1. 52.32.178.7
+34.212.75.30
+54.218.53.128
+52.32.178.7
 1. Run the bot with `python main.py`
-1. [PM2](https://github.com/fabston/TradingView-Webhook-Bot/issues/28#issuecomment-766301062) can help you in running the app in the background / on system boot.
 
-1. Or create a systemctl service:
+### Create a service
+
 1. Create a /root/startbot.sh
 1. Create a directory for logs : mkdir /root/TradingView-Webhook-Bot/logs
 1. Create a service file : /etc/systemd/system/telegrambotservice.service
