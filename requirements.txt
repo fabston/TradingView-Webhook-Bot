@@ -31,6 +31,6 @@ toml==0.10.2
 tornado==6.1
 tweepy==3.10.0
 tzlocal==2.1
-urllib3==1.26.5
+urllib3==1.26.18
 waitress==2.1.1
 Werkzeug==2.0.1
