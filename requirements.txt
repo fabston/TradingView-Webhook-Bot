@@ -1,6 +1,6 @@
 appdirs==1.4.4
 APScheduler==3.6.3
-black==21.5b1
+black==24.3.0
 cachetools==4.2.2
 certifi==2021.5.30
 chardet==4.0.0
