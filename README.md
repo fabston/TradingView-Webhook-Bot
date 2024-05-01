@@ -26,8 +26,8 @@
 The **TradingView Webhook Bot** ⚙️ listens to [TradingView](https://tradingview.com) alerts via [webhooks](https://www.tradingview.com/support/solutions/43000529348-i-want-to-know-more-about-webhooks/) using [flask](https://flask.palletsprojects.com/en/1.1.x/).
 All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 
-> 📊 If you are looking for an exchange to trade on, I can recommend [Bybit](https://partner.bybit.com/b/20882).
-> Sign up now and receive up to $30,000 in Deposit Rewards!
+> 📊 If you are looking for an exchange to trade on, I can recommend **Bybit**.
+> **[Sign up now](https://partner.bybit.com/b/20882)** and receive up to **$30,000** in Deposit Rewards!
 
 ## Features
 - Telegram Support using the [Python Telegram](https://github.com/python-telegram-bot/python-telegram-bot) libary.
