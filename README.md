@@ -69,7 +69,8 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 
 *It is recommended to run flask on a different port like 8080. It is then necessary to forward port 80 to 8080.*
 
-1. Edit the NGINX configuration file `sudo nano /etc/nginx/sites-enabled/tv_webhook`
+1. Install the necessary packages: `sudo apt-get install nginx`
+1. Edit the NGINX configuration file: `sudo nano /etc/nginx/sites-enabled/tv_webhook`
 1. Add the following content:
     ```nginx
    server {
