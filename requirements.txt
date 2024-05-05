@@ -27,6 +27,10 @@ requests==2.25.1
 requests-oauthlib==1.3.0
 six==1.16.0
 slack-webhook==1.0.6
+gunicorn==22.0.0
+uvicorn==0.29.0
+
+
 toml==0.10.2
 tornado==6.1
 tweepy==3.10.0
