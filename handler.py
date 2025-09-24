@@ -14,26 +14,22 @@ from slack_webhook import Slack
 from telegram import Bot
 
 import config
+from logger import logger
 
 
 def send_alert(data):
     msg = data["msg"].encode("latin-1", "backslashreplace").decode("unicode_escape")
+    
+    # ---------------- Telegram ---------------- #
     if config.send_telegram_alerts:
         tg_bot = Bot(token=config.tg_token)
         try:
-            tg_bot.sendMessage(
-                data["telegram"],
-                msg,
-                parse_mode="MARKDOWN",
-            )
-        except KeyError:
-            tg_bot.sendMessage(
-                config.channel,
-                msg,
-                parse_mode="MARKDOWN",
-            )
+            chat_id = data.get("telegram", config.channel)   # <-- uses .get() instead of try/except KeyError
+            tg_bot.sendMessage(chat_id, msg, parse_mode="MARKDOWN")
+            logger.info(f"Telegram alert sent to chat_id={chat_id}")   # <-- NEW log for success
         except Exception as e:
-            print("[X] Telegram Error:\n>", e)
+            logger.error(f"Telegram Error: {e}", exc_info=True)   # <-- replaces print()
+
 
     if config.send_discord_alerts:
         try:
@@ -53,28 +49,29 @@ def send_alert(data):
         except Exception as e:
             print("[X] Discord Error:\n>", e)
 
+    # ---------------- Slack ---------------- #
     if config.send_slack_alerts:
         try:
-            slack = Slack(url="https://hooks.slack.com/services/" + data["slack"])
+            slack_url = "https://hooks.slack.com/services/" + data.get("slack", config.slack_webhook)  # <-- .get()
+            slack = Slack(url=slack_url)
             slack.post(text=msg)
-        except KeyError:
-            slack = Slack(
-                url="https://hooks.slack.com/services/" + config.slack_webhook
-            )
-            slack.post(text=msg)
+            logger.info("Slack alert sent successfully")   # <-- NEW success log
         except Exception as e:
-            print("[X] Slack Error:\n>", e)
+            logger.error(f"Slack Error: {e}", exc_info=True)   # <-- replaces print()
 
+
+    # ---------------- Twitter ---------------- #
     if config.send_twitter_alerts:
-        tw_auth = tweepy.OAuthHandler(config.tw_ckey, config.tw_csecret)
-        tw_auth.set_access_token(config.tw_atoken, config.tw_asecret)
-        tw_api = tweepy.API(tw_auth)
         try:
+            tw_auth = tweepy.OAuthHandler(config.tw_ckey, config.tw_csecret)
+            tw_auth.set_access_token(config.tw_atoken, config.tw_asecret)
+            tw_api = tweepy.API(tw_auth)
             tw_api.update_status(
                 status=msg.replace("*", "").replace("_", "").replace("`", "")
             )
+            logger.info("Twitter alert posted successfully")
         except Exception as e:
-            print("[X] Twitter Error:\n>", e)
+            logger.error(f"Twitter Error: {e}", exc_info=True)
 
     if config.send_email_alerts:
         try:
