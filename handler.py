@@ -7,13 +7,52 @@
 import smtplib
 import ssl
 from email.mime.text import MIMEText
+from uuid import uuid4
 
+import requests
 import tweepy
 from discord_webhook import DiscordEmbed, DiscordWebhook
 from slack_webhook import Slack
 from telegram import Bot
 
 import config
+
+
+def format_twitter_status(msg):
+    return msg.replace("*", "").replace("_", "").replace("`", "")
+
+
+def send_tweepy_alert(msg):
+    tw_auth = tweepy.OAuthHandler(config.tw_ckey, config.tw_csecret)
+    tw_auth.set_access_token(config.tw_atoken, config.tw_asecret)
+    tw_api = tweepy.API(tw_auth)
+    return tw_api.update_status(status=format_twitter_status(msg))
+
+
+def send_xquik_alert(msg):
+    if not config.xquik_api_key or not config.xquik_account:
+        raise ValueError("XQUIK_API_KEY and XQUIK_ACCOUNT are required")
+
+    response = requests.post(
+        config.xquik_api_url,
+        headers={
+            "x-api-key": config.xquik_api_key,
+            "Idempotency-Key": "tradingview-" + uuid4().hex,
+        },
+        json={"account": config.xquik_account, "text": format_twitter_status(msg)},
+        timeout=config.xquik_timeout,
+    )
+    response.raise_for_status()
+    return response.json()
+
+
+def send_twitter_alert(msg):
+    backend = config.twitter_backend.strip().lower()
+    if backend == "xquik":
+        return send_xquik_alert(msg)
+    if backend in {"tweepy", "twitter"}:
+        return send_tweepy_alert(msg)
+    raise ValueError("TWITTER_BACKEND must be 'tweepy' or 'xquik'")
 
 
 def send_alert(data):
@@ -66,13 +105,8 @@ def send_alert(data):
             print("[X] Slack Error:\n>", e)
 
     if config.send_twitter_alerts:
-        tw_auth = tweepy.OAuthHandler(config.tw_ckey, config.tw_csecret)
-        tw_auth.set_access_token(config.tw_atoken, config.tw_asecret)
-        tw_api = tweepy.API(tw_auth)
         try:
-            tw_api.update_status(
-                status=msg.replace("*", "").replace("_", "").replace("`", "")
-            )
+            send_twitter_alert(msg)
         except Exception as e:
             print("[X] Twitter Error:\n>", e)
 
