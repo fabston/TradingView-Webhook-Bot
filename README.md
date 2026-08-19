@@ -34,6 +34,7 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 - Discord Support using [webhooks](https://support.discord.com/hc/de/articles/228383668-Webhooks-verwenden).
 - Slack Support using [webhooks](https://api.slack.com/messaging/webhooks).
 - Twitter Support using the [tweepy](https://github.com/tweepy/tweepy) libary.
+- Optional X publishing through the [Xquik API](https://docs.xquik.com/api-reference/x-write/create-tweet).
 - Email Support using [smtplib](https://docs.python.org/3/library/smtplib.html).
 - Alert channels can be enabled or disabled in [`config.py`](https://github.com/fabston/TradingView-Webhook-Bot/blob/master/config.py).
 - Dynamically send alerts to different Telegram and/or Discord channels.
@@ -46,6 +47,8 @@ All alerts can be instantly sent to Telegram, Discord, Twitter and/or Email.
 1. Activate it `source TradingView-Webhook-Bot/bin/activate && cd TradingView-Webhook-Bot`
 1. Install all requirements `pip install -r requirements.txt`
 1. Edit and update [`config.py`](https://github.com/fabston/TradingView-Webhook-Bot/blob/master/config.py)
+    - To publish through Xquik, enable `send_twitter_alerts`, connect an X account in the Xquik dashboard, and set `TWITTER_BACKEND=xquik`, `XQUIK_API_KEY`, and `XQUIK_ACCOUNT`. The account value can be its X username or connected-account ID.
+    - Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
 1. Setup TradingView alerts. An example alert message would be:
     ```json
     {
